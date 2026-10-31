@@ -1,0 +1,89 @@
+test_chat_persistence_and_cascade_delete (test_project.ApiTests.test_chat_persistence_and_cascade_delete) ... /Users/itsprateek4510/Desktop/legalnotice/court-date-translator/backend/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:4296: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore[call-arg, no-any-return, no-untyped-call]  # noqa: E501
+INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/upload "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/documents/1/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/documents/1/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/documents/1 "HTTP/1.1 200 OK"
+ok
+test_cross_user_access (test_project.ApiTests.test_cross_user_access) ... INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/upload "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/folders "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/documents/1 "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: DELETE http://testserver/documents/1 "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://testserver/documents/1/messages "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: POST http://testserver/documents/1/chat "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: DELETE http://testserver/folders/1 "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://testserver/documents "HTTP/1.1 200 OK"
+ok
+test_document_lifecycle (test_project.ApiTests.test_document_lifecycle) ... INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/upload "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/documents "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/documents/1 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/documents/1 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/documents/1 "HTTP/1.1 404 Not Found"
+ok
+test_empty_folder_and_message (test_project.ApiTests.test_empty_folder_and_message) ... INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/folders "HTTP/1.1 400 Bad Request"
+INFO:httpx:HTTP Request: POST http://testserver/folders "HTTP/1.1 400 Bad Request"
+INFO:httpx:HTTP Request: POST http://testserver/upload "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/documents/1/chat "HTTP/1.1 400 Bad Request"
+ok
+test_folder_lifecycle_and_filters (test_project.ApiTests.test_folder_lifecycle_and_filters) ... INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/upload "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/folders "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: PATCH http://testserver/folders/1 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: PUT http://testserver/documents/1/folder "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/documents?folder_id=1 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/documents?unfiled=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/folders "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE http://testserver/folders/1 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/documents/1 "HTTP/1.1 200 OK"
+ok
+test_health_and_authentication (test_project.ApiTests.test_health_and_authentication) ... INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/ping "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET http://testserver/documents "HTTP/1.1 401 Unauthorized"
+INFO:httpx:HTTP Request: GET http://testserver/documents "HTTP/1.1 401 Unauthorized"
+INFO:httpx:HTTP Request: GET http://testserver/auth/me "HTTP/1.1 200 OK"
+ok
+test_invalid_uploads (test_project.ApiTests.test_invalid_uploads) ... INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/upload "HTTP/1.1 400 Bad Request"
+INFO:httpx:HTTP Request: POST http://testserver/upload "HTTP/1.1 400 Bad Request"
+INFO:httpx:HTTP Request: POST http://testserver/upload "HTTP/1.1 400 Bad Request"
+ok
+test_known_issue_malformed_ai_has_structured_error (test_project.ApiTests.test_known_issue_malformed_ai_has_structured_error)
+Known defect: malformed AI JSON currently returns plain generic 500. ... INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/upload "HTTP/1.1 500 Internal Server Error"
+expected failure
+test_login_and_duplicate (test_project.ApiTests.test_login_and_duplicate) ... INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/auth/login "HTTP/1.1 401 Unauthorized"
+INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 409 Conflict"
+ok
+test_provider_failure_not_persisted (test_project.ApiTests.test_provider_failure_not_persisted) ... INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/upload "HTTP/1.1 500 Internal Server Error"
+INFO:httpx:HTTP Request: GET http://testserver/documents "HTTP/1.1 200 OK"
+ok
+test_registration_validation (test_project.ApiTests.test_registration_validation) ... INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+ok
+test_upload_size_limit (test_project.ApiTests.test_upload_size_limit) ... INFO:httpx:HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://testserver/upload "HTTP/1.1 413 Request Entity Too Large"
+ok
+test_extract_all_dataset_pdfs (test_project.UnitTests.test_extract_all_dataset_pdfs) ... ok
+test_invalid_json (test_project.UnitTests.test_invalid_json) ... ok
+test_invalid_pdf_inputs (test_project.UnitTests.test_invalid_pdf_inputs) ... WARNING:pypdf._reader:EOF marker not found
+ok
+test_json_fences_and_prose (test_project.UnitTests.test_json_fences_and_prose) ... ok
+test_normalization (test_project.UnitTests.test_normalization) ... ok
+test_password_hash (test_project.UnitTests.test_password_hash) ... ok
+test_token_roundtrip (test_project.UnitTests.test_token_roundtrip) ... ok
+test_truncation (test_project.UnitTests.test_truncation) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 4.399s
+
+OK (expected failures=1)

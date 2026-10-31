@@ -1,0 +1,27 @@
+[
+  {
+    "filename": "01_civil_summons.pdf",
+    "text": "SYNTHETIC DEMO DOCUMENT - NOT A REAL LEGAL NOTICE\nIN THE DEMO DISTRICT COURT, NEW DELHI\nCIVIL SUMMONS\nCase number: DEMO-CS-101-2026\nParties: Asha Demo versus Bharat Demo\nYou must appear before the court on 15 December 2026 at 10:00 AM.\nFile a written reply by 08 December 2026.\nFailure to appear may result in an ex-parte decision.\nConsult a qualified lawyer and bring supporting records.",
+    "expected": {"document_type": "Civil summons", "court_authority": "Demo District Court, New Delhi", "case_number": "DEMO-CS-101-2026", "parties": ["Asha Demo", "Bharat Demo"], "court_date": "2026-12-15", "deadline_dates": ["2026-12-08"], "required_action_facts": ["Appear before the court", "File a written reply"], "warning_facts": ["Ex-parte decision if absent"]}
+  },
+  {
+    "filename": "02_payment_notice.pdf",
+    "text": "SYNTHETIC DEMO DOCUMENT - NOT A REAL LEGAL NOTICE\nPAYMENT DEMAND NOTICE\nReference: DEMO-PAY-202-2026\nSender: Demo Supplies Private Limited\nRecipient: Demo Retail Private Limited\nAn unpaid invoice of INR 25000 is outstanding.\nPay INR 25000 or send a written dispute by 20 November 2026.\nNo court case has been filed and no hearing is scheduled.\nKeep proof of payment and seek legal advice if you dispute the claim.",
+    "expected": {"document_type": "Payment demand notice", "court_authority": null, "case_number": null, "parties": ["Demo Supplies Private Limited", "Demo Retail Private Limited"], "court_date": null, "deadline_dates": ["2026-11-20"], "required_action_facts": ["Pay INR 25000 or send a written dispute", "Keep proof of payment"], "warning_facts": []}
+  },
+  {
+    "filename": "03_consumer_hearing.pdf",
+    "text": "SYNTHETIC DEMO DOCUMENT - NOT A REAL LEGAL NOTICE\nDEMO DISTRICT CONSUMER DISPUTES REDRESSAL COMMISSION, NOIDA\nHEARING NOTICE\nCase number: DEMO-CC-303-2026\nParties: Charu Demo versus Demo Appliances Limited\nThe hearing is scheduled for 05 January 2027 at 11:30 AM.\nSubmit the purchase invoice and warranty record by 28 December 2026.\nAttend the hearing or arrange authorized representation.\nDo not ignore this notice.",
+    "expected": {"document_type": "Hearing notice", "court_authority": "Demo District Consumer Disputes Redressal Commission, Noida", "case_number": "DEMO-CC-303-2026", "parties": ["Charu Demo", "Demo Appliances Limited"], "court_date": "2027-01-05", "deadline_dates": ["2026-12-28"], "required_action_facts": ["Submit purchase invoice and warranty record", "Attend or arrange authorized representation"], "warning_facts": ["Do not ignore the notice"]}
+  },
+  {
+    "filename": "04_multiple_deadlines.pdf",
+    "text": "SYNTHETIC DEMO DOCUMENT - NOT A REAL LEGAL NOTICE\nIN THE DEMO CIVIL COURT, LUCKNOW\nPROCEDURAL ORDER\nCase number: DEMO-CS-404-2026\nParties: Deepa Demo versus Eshan Demo\nFile the written statement by 10 December 2026.\nExchange supporting documents by 17 December 2026.\nThe next hearing is 07 January 2027 at 09:30 AM.\nBring original supporting documents to the hearing.\nLate submissions may not be accepted.",
+    "expected": {"document_type": "Procedural order", "court_authority": "Demo Civil Court, Lucknow", "case_number": "DEMO-CS-404-2026", "parties": ["Deepa Demo", "Eshan Demo"], "court_date": "2027-01-07", "deadline_dates": ["2026-12-10", "2026-12-17"], "required_action_facts": ["File written statement", "Exchange supporting documents", "Bring originals to hearing"], "warning_facts": ["Late submissions may not be accepted"]}
+  },
+  {
+    "filename": "05_missing_date.pdf",
+    "text": "SYNTHETIC DEMO DOCUMENT - NOT A REAL LEGAL NOTICE\nDOCUMENT REQUEST\nSender: Demo Housing Association\nRecipient: Farah Demo\nPlease provide a copy of your maintenance payment receipt.\nThis request does not specify a deadline or hearing date.\nNo court, case number, or legal penalty is stated.\nContact the sender for clarification if needed.",
+    "expected": {"document_type": "Document request", "court_authority": null, "case_number": null, "parties": ["Demo Housing Association", "Farah Demo"], "court_date": null, "deadline_dates": [], "required_action_facts": ["Provide maintenance payment receipt"], "warning_facts": []}
+  }
+]

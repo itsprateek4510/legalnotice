@@ -1,0 +1,37 @@
+# --- Backend dependencies ---
+
+# Web framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# Data validation
+pydantic>=2.10
+
+# CORS
+# (built into FastAPI via starlette; no extra package needed)
+
+# PDF extraction
+pdfplumber==0.11.4
+pypdf==5.1.0
+
+# LLM integration
+google-genai==2.22.0
+openai==1.59.6
+
+# Local LLM (Ollama) HTTP client
+httpx==0.28.1
+
+# Environment variables
+python-dotenv==1.0.1
+
+# Multipart form handling
+python-multipart==0.0.20
+
+# --- Database (SQLite via SQLAlchemy) ---
+sqlalchemy>=2.0
+# passlib must stay on bcrypt < 4.1 (bcrypt 5.x removed __about__ the lib requires)
+passlib[bcrypt]==1.7.4
+bcrypt<4.1
+
+# --- Authentication (JWT) ---
+PyJWT==2.13.0

@@ -1,0 +1,14 @@
+
+> court-date-translator-frontend@1.0.0 test
+> react-scripts test --watchAll=false --runInBand
+
+PASS src/components/ResultCard.test.js
+  ResultCard
+    ✓ renders title and child content with default styling (2 ms)
+    ✓ renders warning tone and decorative icon
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        0.123 s, estimated 1 s
+Ran all test suites.

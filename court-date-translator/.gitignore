@@ -1,0 +1,25 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# --- Environment & secrets ---
+.env
+backend/.env
+frontend/.env
+
+# --- Node / React ---
+node_modules/
+frontend/build/
+frontend/.cache/
+npm-debug.log*
+
+# --- OS ---
+.DS_Store
+
+# --- Editors ---
+.idea/
+.vscode/
+*.swp
